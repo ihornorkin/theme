@@ -5,7 +5,7 @@ gulp.task('styles:dependencies', () => (
 	runSequence(
 		'sprites',
 		'icons',
-		'styles'
+		'scss-style'
 	)
 ));
 

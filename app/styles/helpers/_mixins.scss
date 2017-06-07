@@ -1,0 +1,27 @@
+// Clear the float on any element.
+@mixin clearfix() {
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+// Fix no working `-webkit-text-size-adjust: 100%;` in Android.
+@mixin fix-text-size-adjust() {
+	background-image: linear-gradient(transparent, transparent);
+}
+
+// Fonts mixin
+@mixin webfont($family, $file, $weight) {
+	@font-face {
+		font-family: family;
+		src: url(font-url(file + '.eot'));
+		src: url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+		url(font-url(file + '.woff')) format('woff'),
+		url(font-url(file + '.ttf')) format('truetype'),
+		url(font-url(file + '.svg#'+ family)) format('svg');
+		font-weight: weight;
+		font-style: normal;
+	}
+}

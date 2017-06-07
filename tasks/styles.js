@@ -11,27 +11,30 @@ import nano from 'gulp-cssnano';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import errorHandler from 'gulp-plumber-error-handler';
+import sass from 'gulp-sass';
+import magicImporter from 'node-sass-magic-importer';
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
-gulp.task('styles', () => (
-	gulp.src('app/styles/*.styl')
+gulp.task('scss-style', () => (
+		gulp.src('app/styles/*.scss')
 		.pipe(plumber({errorHandler: errorHandler(`Error in \'styles\' task`)}))
 		.pipe(gulpIf(isDebug, sourcemaps.init()))
-		.pipe(stylus({
+		.pipe(sass({
 			use: [
 				importIfExist(),
 				rupture(),
 				autoprefixer()
 			],
-			'include css': true
+			'include css': true,
+			importer: magicImporter()
 		}))
 		.pipe(gulpIf(!isDebug, gcmq()))
 		.pipe(gulpIf(!isDebug, nano({zindex: false})))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulpIf(isDebug, sourcemaps.write()))
 		.pipe(gulp.dest('dist/styles'))
-));
+	));
 
 gulp.task('styles:lint', () => (
 	gulp.src(['app/blocks/**/*.styl', '!app/styles/**'])
