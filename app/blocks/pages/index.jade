@@ -1,6 +1,6 @@
 include /../node_modules/bemto.jade/bemto
 include /../node_modules/jade-injected/jade-injected
-include ../page/page
+include ../body/body
 include ../scripts/scripts
 include ../footer/footer
 
@@ -9,8 +9,7 @@ include ../footer/footer
 doctype html
 html(lang='ru')
 	include ../head/head
-	+page
+	+body
 		+footer
 
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js')
 		+scripts(['app.min.js'])

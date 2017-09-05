@@ -15,6 +15,7 @@ dist
 *.swo
 *.swp
 *.vi
+*.scss
 
 # OS or Editor folders
 *.sublime-grunt.cache
