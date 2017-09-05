@@ -1,29 +1,28 @@
 import $ from 'jquery';
 
 const mainModule = (function () {
-	let cachedDOM = {};
+	let elements = {};
 
 	const cacheDOM = function () {
 		const self = {};
 
 		/* self.elementName = $(); */
-
 		return self;
 	};
 
 /* Usage element
-	cacheDOM.elementName and othe js code
-*/
+	elements.elementName and othe js code
+	*/
 
 /* Example function
 	const exampleFunction = function () {
 		do code
 	}
-*/
+	*/
 
-/* Declarate function in array */
+	/* Declarate function in array */
 	const init = function () {
-		cachedDOM = cacheDOM();
+		elements = cacheDOM();
 		/* exampleFunction(); */
 	};
 

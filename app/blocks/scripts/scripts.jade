@@ -1,4 +1,5 @@
 mixin scripts(scripts)
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js')
 	each src in scripts
 		- var isExternalScript = /^(?:https?\:)?\/\//i;
 		- src = isExternalScript.test(src) ? src : 'scripts/' + src;
