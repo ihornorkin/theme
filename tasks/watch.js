@@ -8,7 +8,7 @@ const bs = browserSync('server');
 gulp.task('watch', () => {
 	global.watch = true;
 
-	watch(['app/sprites/**/*.png', '!app/sprites/*.png'], () => runSequence('sprites'));
+	watch(['app/images/**/*.png', '!app/images/*.png'], () => runSequence('sprites'));
 	watch('app/{styles,blocks}/**/*.scss', () => {
 		runSequence(['scss-style', 'styles:lint'], () => bs.reload('assets/styles/app.min.css'));
 	});
