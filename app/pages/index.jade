@@ -1,4 +1,18 @@
-extends /blocks/pages/index
+include /blocks/head/head
+include /blocks/body/body
+include /blocks/scripts/scripts
+include /blocks/header/header
+include /blocks/footer/footer
 
 block head
 	- var pageTitle = '';
+
+doctype html
+html(lang='ru')
+	+head
+	+body
+		+header
+		+footer
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+		+scripts(['app.min.js'])
