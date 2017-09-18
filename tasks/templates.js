@@ -22,7 +22,7 @@ gulp.task('templates', () => (
 		.pipe(cached('jade'))
 		.pipe(gulpIf(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
-		.pipe(jade({basedir: 'app', data}))
+		.pipe(jade({basedir: 'app', pretty: true, data}))
 		.pipe(gulpIf(process.env.NODE_ENV === 'production', staticHash({
 			asset: 'dist',
 			exts: ['js', 'css']
