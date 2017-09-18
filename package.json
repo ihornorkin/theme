@@ -71,7 +71,6 @@
     "gulp-if": "^2.0.0",
     "gulp-jade": "^1.1.0",
     "gulp-jade-inheritance": "^0.5.3",
-    "gulp-jsbeautifier": "^1.0.1",
     "gulp-plumber": "^1.0.1",
     "gulp-plumber-error-handler": "^1.0.0",
     "gulp-pug-linter": "^0.4.1",
@@ -115,6 +114,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "node-sass": "^4.5.3",
     "retinajs": "^2.1.1",
     "slick-carousel": "^1.6.0"
   }
