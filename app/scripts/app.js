@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 /* Example import node_modules*/
-//import 'slick-carousel';
+/* import 'slick-carousel'; */
 
 const mainModule = (function () {
 	let elements = {};
