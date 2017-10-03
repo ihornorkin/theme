@@ -7,11 +7,8 @@
 /* Example scss import modules */
 //@import '../../node_modules/slick-carousel/**/*.scss';
 
-/* Ui styles */
-/* Read more */
-//https://semantic-ui.com
-@import '../../node_modules/semantic-ui-segment/segment';
-@import '../../node_modules/semantic-ui-grid/grid';
+/* Bootsrap styles */
+@import '../../node_mobules/dist/css/bootstrap';
 
 /* Blocks import */
 @import '../blocks/**/*.scss';
