@@ -2,6 +2,8 @@
 // Fonts
 // *****************************************************************************
 
+$base-font: 'Helvetica Neue', Arial, sans-serif;
+$main-font: $base-font;
 
 // *****************************************************************************
 // Colors
@@ -12,10 +14,10 @@
 // Media
 // *****************************************************************************
 
-$mobile: 768px;
+$mobile: 414px;
 $mobile-down: mobile - 1;
-$tablet: 991px;
+$tablet: 768px;
 $tablet-down: tablet - 1;
 $tablet-up: 992px;
-$hd: 1920px;
+$hd: 1921px;
 $hd-down: hd - 1;

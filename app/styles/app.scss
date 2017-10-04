@@ -1,14 +1,18 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
-@import 'helpers/optimize';
-@import 'helpers/base';
 @import 'helpers/fonts';
-@import 'helpers/buttons';
+@import 'helpers/optimize';
+//@import 'helpers/sprites/sprite';
+
 /* Example scss import modules */
 //@import '../../node_modules/slick-carousel/**/*.scss';
 
 /* Bootsrap styles */
-@import '../../node_mobules/dist/css/bootstrap';
+@import '../../node_modules/bootstrap/dist/css/bootstrap';
 
-/* Blocks import */
+@import 'helpers/base';
+@import 'helpers/buttons';
+
+/* Blocks import using node-sass-magic-importer for import */
+/* https://www.npmjs.com/package/node-sass-magic-importer */
 @import '../blocks/**/*.scss';

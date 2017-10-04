@@ -3,7 +3,6 @@ import plumber from 'gulp-plumber';
 import gulpIf from 'gulp-if';
 import rupture from 'rupture';
 import stylint from 'gulp-stylint';
-import importIfExist from 'stylus-import-if-exist';
 import autoprefixer from 'gulp-autoprefixer';
 import gcmq from 'gulp-group-css-media-queries';
 import nano from 'gulp-cssnano';
