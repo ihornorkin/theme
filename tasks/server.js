@@ -3,7 +3,8 @@ import gulp from 'gulp';
 import debuga from 'debuga';
 
 const bs = browserSync('server');
-const { PORT, OPEN, NODE_ENV, TUNNEL } = process.env;
+const { PORT, OPEN, NODE_ENV} = process.env;
+const TUNNEL = false;
 
 gulp.task('server', () => (
 	bs.init({
@@ -24,6 +25,6 @@ gulp.task('server', () => (
 			directory: false,
 			middleware: NODE_ENV !== 'production' ? [debuga()] : []
 		},
-		tunnel: !!TUNNEL
+		tunnel: TUNNEL
 	})
 ));

@@ -14,16 +14,17 @@ gulp.task('default', () => (
 			'styles:dependencies',
 			'templates'
 		],
-		'server',
 		'copy:image',
 		'copy:libs',
 		'copy:fonts',
-		'watch'
+		'watch',
+		'server'
 	)
 ));
 
 gulp.task('build', () => (
 	runSequence(
+		'clean',
 		'styles:dependencies',
 		'scripts',
 		'copy',
