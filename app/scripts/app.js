@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 /* Example import node_modules*/
 /* import 'slick-carousel'; */
 
@@ -36,6 +34,6 @@ const mainModule = (function () {
 
 /* Initilisation function */
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
 	mainModule.init();
 });

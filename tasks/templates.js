@@ -1,15 +1,13 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
-import jade from 'gulp-jade';
-import pugLinter from 'gulp-pug-linter';
 import inheritance from 'gulp-jade-inheritance';
-import cached from 'gulp-cached';
 import filter from 'gulp-filter';
 import rename from 'gulp-rename';
 import errorHandler from 'gulp-plumber-error-handler';
 import getData from 'jade-get-data';
 import staticHash from 'gulp-static-hash';
+import fileinclude from 'gulp-file-include';
 
 const data = {
 	getData: getData('app/data'),
@@ -17,12 +15,14 @@ const data = {
 };
 
 gulp.task('templates', () => (
-	gulp.src('app/**/*.jade')
+	gulp.src('app/pages/*.html')
 		.pipe(plumber({errorHandler: errorHandler(`Error in \'templates\' task`)}))
-		.pipe(cached('jade'))
-		.pipe(gulpIf(global.watch, inheritance({basedir: 'app'})))
+		.pipe(gulpIf(global.watch, inheritance({basedir: 'app'}, inheritance)))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
-		.pipe(jade({basedir: 'app', pretty: true, data}))
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file'
+		}))
 		.pipe(gulpIf(process.env.NODE_ENV === 'production', staticHash({
 			asset: 'dist',
 			exts: ['js', 'css']
@@ -30,10 +30,3 @@ gulp.task('templates', () => (
 		.pipe(rename({dirname: '.'}))
 		.pipe(gulp.dest('dist'))
 ));
-
-gulp.task('templates:lint', () =>
-	gulp
-		.src('app/**/*.jade')
-		.pipe(pugLinter())
-		.pipe(pugLinter.reporter('fail'))
-);
