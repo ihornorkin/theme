@@ -14,7 +14,7 @@ const mainModule = (function () {
 	};
 
 /* Usage element
-	elements.elementName and othe js code
+	elements.elementName and other js code
 	*/
 
 /* Example function
