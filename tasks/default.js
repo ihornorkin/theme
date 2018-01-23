@@ -14,11 +14,11 @@ gulp.task('default', () => (
 			'styles:dependencies',
 			'templates'
 		],
+		'server',
 		'copy:image',
 		'copy:libs',
 		'copy:fonts',
-		'watch',
-		'server'
+		'watch'
 	)
 ));
 
