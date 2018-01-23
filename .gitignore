@@ -34,6 +34,7 @@ Thumbs.db
 .idea
 .svn
 bower_components
+package-lock.json
 
 # Node.JS
 node_modules
